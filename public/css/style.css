@@ -86,6 +86,41 @@ body {
   margin: 0 auto;
 }
 
+/*Mobil Kısmı  */
+
+@media only screen and (max-width: 768px) {
+  /* Buraya mobil ekranlar için CSS stil tanımlamalarını ekle */
+  /* Örneğin: */
+  
+  body {
+    font-size: 14px; /* Metin boyutunu küçültmek */
+  }
+
+  /* Navbar'ı düzenle */
+  .custom_nav-container {
+    /* Örneğin: */
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* Slider'ı düzenle */
+  .slider_section {
+    /* Örneğin: */
+    padding-top: 20px;
+  }
+
+  /* Responsive resimler */
+  img {
+    max-width: 100%; /* Resimlerin ekran genişliğine sığacak şekilde boyutunu ayarla */
+    height: auto; /* Oranları koruyarak resimlerin yüksekliğini ayarla */
+  }
+
+  /* Diğer öğeleri istediğin gibi düzenle */
+}
+
+/* Mobil kısmı*/
+
+
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link {
   margin: 10px 45px;
   padding: 0;
