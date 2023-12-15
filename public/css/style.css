@@ -203,7 +203,7 @@ a:focus {
   fill: none;
   stroke-width: 20;
   stroke-dasharray: 377; /* Çemberin çevresi */
-  stroke-dashoffset: 377; /* Başlangıçta tamamen dolu olmayacak */
+  stroke-dashoffset: 377; /* Başlangıçta tamamen boş olacak */
   transition: stroke-dashoffset 0.5s ease;
   transform-origin: center;
 }
@@ -260,6 +260,7 @@ a:focus {
     align-items: center;
   }
 }
+
 
 
 
