@@ -230,7 +230,6 @@ a:focus {
   stroke: rgb(1, 74, 75); /* Node.js için renk */
 }
 
-/* Mobil ekranlar için ayarlar */
 /* Mobil ekranlar için stiller */
 @media (max-width: 768px) {
   /* Genel stiller */
@@ -238,25 +237,40 @@ a:focus {
     width: 150px;
     height: 150px;
     margin: 10px;
+    position: relative;
   }
 
   .progress-circle-svg {
     transform: rotate(-90deg) scale(0.8);
   }
 
+  .progress-circle-background {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 20;
+  }
+
   .progress-circle-progress {
-    stroke-width: 15;
+    fill: none;
+    stroke-width: 20;
     stroke-dasharray: calc(314 * 1.2); /* Dairenin çevresi (2 * π * r) */
-    stroke-dashoffset: 377; /* Başlangıçta tamamen boş olacak */
+    stroke-dashoffset: 0; /* Başlangıçta tamamen boş olacak */
     transition: stroke-dashoffset 0.5s ease;
     transform-origin: center;
   }
 
   .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 18px;
+    color: #333;
   }
 
   .progress-wrapper {
+    display: flex;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
   }
@@ -273,6 +287,7 @@ a:focus {
     stroke: rgb(75, 1, 74); /* Node.js için renk */
   }
 }
+
 
 
 
