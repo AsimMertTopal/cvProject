@@ -201,11 +201,10 @@ a:focus {
 
 .progress-circle-progress {
   fill: none;
-  stroke: rgb(1, 74, 75);
   stroke-width: 20;
-  stroke-dasharray: calc(377 * 3.14); /* Çemberin çevresi (2 * π * r) */
-  stroke-dashoffset: calc(377 * 3.14 - ((377 * 3.14) * 70) / 100); /* Yüzdeye göre uzunluk */
-  transition: stroke-dashoffset 0.5s ease; /* Animasyon süresi */
+  stroke-dasharray: 377; /* Çemberin çevresi */
+  stroke-dashoffset: 377; /* Başlangıçta tamamen dolu olmayacak */
+  transition: stroke-dashoffset 0.5s ease;
   transform-origin: center;
 }
 
@@ -223,6 +222,18 @@ a:focus {
   justify-content: space-around;
 }
 
+/* Java için yüzdeye göre boyama */
+.progress-circle.java .progress-circle-progress {
+  stroke-dashoffset: calc(377 - (377 * 70) / 100);
+  stroke: rgb(1, 74, 75); /* Java için renk */
+}
+
+/* Node.js için yüzdeye göre boyama */
+.progress-circle.nodejs .progress-circle-progress {
+  stroke-dashoffset: calc(377 - (377 * 50) / 100);
+  stroke: rgb(75, 1, 74); /* Node.js için renk */
+}
+
 /* Mobil ekranlar için ayarlar */
 @media (max-width: 768px) {
   .progress-circle {
@@ -238,7 +249,6 @@ a:focus {
   .progress-circle-progress {
     stroke-width: 15;
     stroke-dasharray: calc(314 * 1.2); /* Dairenin çevresi (2 * π * r) */
-    stroke-dashoffset: calc(314 * 1.2 - ((314 * 1.2) * 70) / 100); /* Yüzdeye göre uzunluk */
   }
 
   .percentage {
