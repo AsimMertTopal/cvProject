@@ -182,36 +182,8 @@ a:focus {
  /* Daire Başlangıç */
 
 
-/* Mobil ekranlar için ayarlar */
-@media (max-width: 768px) {
-  .progress-circle {
-    width: 150px;
-    height: 150px;
-    margin: 10px; /* Daireler arasındaki boşluk */
-  }
-
-  .progress-circle-svg {
-    transform: rotate(-90deg) scale(0.8);
-  }
-
-  .progress-circle-progress {
-    stroke-width: 15;
-  }
-
-  .percentage {
-    font-size: 18px;
-  }
-
-  .progress-wrapper {
-    flex-direction: column; /* Mobilde sütun düzeni */
-    align-items: center; /* Merkez hizalama */
-  }
-}
-
-
-
-
- .progress-circle {
+/* Genel stiller */
+.progress-circle {
   width: 200px;
   height: 200px;
   position: relative;
@@ -231,13 +203,11 @@ a:focus {
   fill: none;
   stroke: rgb(1, 74, 75);
   stroke-width: 20;
-  stroke-dasharray: 565; /* Çemberin çevresi */
-  stroke-dashoffset: calc(565 - (565 * 70) / 100); /* Yüzdeye göre uzunluk */
+  stroke-dasharray: calc(377 * 3.14); /* Çemberin çevresi (2 * π * r) */
+  stroke-dashoffset: calc(377 * 3.14 - ((377 * 3.14) * 70) / 100); /* Yüzdeye göre uzunluk */
   transition: stroke-dashoffset 0.5s ease; /* Animasyon süresi */
   transform-origin: center;
 }
-
-
 
 .percentage {
   position: absolute;
@@ -247,54 +217,40 @@ a:focus {
   font-size: 24px;
   color: #333;
 }
+
 .progress-wrapper {
-  display: flex; /* Yan yana düzenleme */
-  justify-content: space-around; /* Uzayı dağıtma */
+  display: flex;
+  justify-content: space-around;
 }
 
-/* Yeni sınıflarla %50'lik bir doluluk oranı için güncellenmiş kodlar */
+/* Mobil ekranlar için ayarlar */
+@media (max-width: 768px) {
+  .progress-circle {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+  }
 
-.new-progress-circle {
-  width: 200px;
-  height: 200px;
-  position: relative;
+  .progress-circle-svg {
+    transform: rotate(-90deg) scale(0.8);
+  }
+
+  .progress-circle-progress {
+    stroke-width: 15;
+    stroke-dasharray: calc(314 * 1.2); /* Dairenin çevresi (2 * π * r) */
+    stroke-dashoffset: calc(314 * 1.2 - ((314 * 1.2) * 70) / 100); /* Yüzdeye göre uzunluk */
+  }
+
+  .percentage {
+    font-size: 18px;
+  }
+
+  .progress-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-.new-progress-circle-svg {
-  transform: rotate(-90deg);
-}
-
-.new-progress-circle-background {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 20;
-}
-
-.new-progress-circle-progress {
-  fill: none;
-  stroke: rgb(1, 74, 75);
-  stroke-width: 20;
-  stroke-dasharray: 565; /* Çemberin çevresi */
-  stroke-dashoffset: calc(565 - (565 * 50) / 100); /* Yüzdeye göre uzunluk */
-  transition: stroke-dashoffset 0.5s ease; /* Animasyon süresi */
-  transform-origin: center;
-}
-
-.new-percentage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-  color: #333;
-}
-
-
-
-.new-progress-wrapper {
-  display: flex; /* Yan yana düzenleme */
-  justify-content: space-around; /* Uzayı dağıtma */
-}
 
 
  /* Daire Başlangıç */
