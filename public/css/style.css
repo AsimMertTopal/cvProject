@@ -180,6 +180,35 @@ a:focus {
   border: none;
 }
  /* Daire Başlangıç */
+
+
+/* Mobil ekranlar için ayarlar */
+@media (max-width: 768px) {
+  .progress-circle,
+  .new-progress-circle {
+    width: 150px; /* Mobilde daha küçük bir daire */
+    height: 150px; /* Mobilde daha küçük bir daire */
+  }
+
+  .progress-circle-svg,
+  .new-progress-circle-svg {
+    transform: rotate(-90deg) scale(0.8); /* Daha küçük boyut için dönüş ve ölçeklendirme */
+  }
+
+  .progress-circle-progress,
+  .new-progress-circle-progress {
+    stroke-width: 15; /* Mobilde daha ince bir çizgi */
+  }
+
+  .percentage,
+  .new-percentage {
+    font-size: 18px; /* Mobilde daha küçük yazı boyutu */
+  }
+}
+
+
+
+
  .progress-circle {
   width: 200px;
   height: 200px;
