@@ -86,36 +86,32 @@ body {
   margin: 0 auto;
 }
 
-/*Mobil Kısmı  */
-
-@media only screen and (max-width: 768px) {
-  /* Buraya mobil ekranlar için CSS stil tanımlamalarını ekle */
-  /* Örneğin: */
-  
-  body {
-    font-size: 14px; /* Metin boyutunu küçültmek */
+/* Mobil ekranlar için ayarlar */
+@media (max-width: 768px) {
+  .progress-circle {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
   }
 
-  /* Navbar'ı düzenle */
-  .custom_nav-container {
-    /* Örneğin: */
-    padding-top: 10px;
-    padding-bottom: 10px;
+  .progress-circle-svg {
+    transform: rotate(-90deg) scale(0.8);
   }
 
-  /* Slider'ı düzenle */
-  .slider_section {
-    /* Örneğin: */
-    padding-top: 20px;
+  .progress-circle-progress {
+    stroke-width: 15;
+    stroke-dasharray: calc(314 * 1.2); /* Dairenin çevresi (2 * π * r) */
+    stroke-dashoffset: 0; /* Mobilde başlangıçta tamamen boş olacak */
   }
 
-  /* Responsive resimler */
-  img {
-    max-width: 100%; /* Resimlerin ekran genişliğine sığacak şekilde boyutunu ayarla */
-    height: auto; /* Oranları koruyarak resimlerin yüksekliğini ayarla */
+  .percentage {
+    font-size: 18px;
   }
 
-  /* Diğer öğeleri istediğin gibi düzenle */
+  .progress-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Mobil kısmı*/
