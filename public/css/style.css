@@ -231,7 +231,9 @@ a:focus {
 }
 
 /* Mobil ekranlar için ayarlar */
+/* Mobil ekranlar için stiller */
 @media (max-width: 768px) {
+  /* Genel stiller */
   .progress-circle {
     width: 150px;
     height: 150px;
@@ -245,6 +247,9 @@ a:focus {
   .progress-circle-progress {
     stroke-width: 15;
     stroke-dasharray: calc(314 * 1.2); /* Dairenin çevresi (2 * π * r) */
+    stroke-dashoffset: 377; /* Başlangıçta tamamen boş olacak */
+    transition: stroke-dashoffset 0.5s ease;
+    transform-origin: center;
   }
 
   .percentage {
@@ -255,7 +260,20 @@ a:focus {
     flex-direction: column;
     align-items: center;
   }
+
+  /* Java için yüzdeye göre boyama */
+  .progress-circle.java .progress-circle-progress {
+    stroke-dashoffset: calc(314 * 1.2 - ((314 * 1.2) * 70) / 100);
+    stroke: rgb(1, 74, 75); /* Java için renk */
+  }
+
+  /* Node.js için yüzdeye göre boyama */
+  .progress-circle.nodejs .progress-circle-progress {
+    stroke-dashoffset: calc(314 * 1.2 - ((314 * 1.2) * 50) / 100);
+    stroke: rgb(75, 1, 74); /* Node.js için renk */
+  }
 }
+
 
 
 
